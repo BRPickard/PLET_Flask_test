@@ -13,7 +13,3 @@ def result():
         feature['properties']['Added Field'] = 'Totally works!'
     
     return jsonify(data), 200
-
-
-if __name__ == '__main__':
-    app.run(debug=True, port=2000)
