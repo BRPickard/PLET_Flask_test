@@ -5,18 +5,20 @@ from main import PLET
 app = Flask(__name__)
 
 
-@app.route('/result', methods = ['POST', 'GET'])
+@app.route('/', methods = ['POST', 'GET'])
 
 def result():
 
-    data = request.get_json()   
-    gdf = gpd.GeoDataFrame.from_features(data["features"])
-    runall = PLET(gdf)
+    #data = request.get_json()   
+    #gdf = gpd.GeoDataFrame.from_features(data["features"])
+    #runall = PLET(gdf)
     
-    runall = runall.to_json()
-    runall_dict = json.loads(runall)
+    #runall = runall.to_json()
+    #runall_dict = json.loads(runall)
     
-    return jsonify(runall_dict), 200
+    #return jsonify(runall_dict), 200
 
+    return  'Hello World'
+    
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run()
